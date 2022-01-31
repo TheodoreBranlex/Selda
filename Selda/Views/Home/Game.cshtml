@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Game";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Selda</h1>
+    <p>Play the game</p>
+    <canvas id="renderCanvas"></canvas>
+</div>
+
+@section scripts
+{
+<script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
+
+<script src="~/js/Game.js"></script>
+<script src="~/js/Arena.js"></script>
+<script src="~/js/Player.js"></script>
+}
