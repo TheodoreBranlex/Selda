@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Ressources\**" />
+    <EmbeddedResource Remove="Ressources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="Models/ErrorViewModel.fs" />
     <Compile Include="Controllers/HomeController.fs" />
     <Compile Include="Program.fs" />
@@ -15,8 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Ressources\Fonts\" />
-    <Folder Include="Ressources\Images\" />
+    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
 </Project>

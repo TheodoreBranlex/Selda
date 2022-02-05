@@ -1,0 +1,15 @@
+﻿@font-face {
+    font-family: 'ReggaeOne';
+    src: url('../fonts/ReggaeOne.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Triforce';
+    src: url('../fonts/Triforce.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
