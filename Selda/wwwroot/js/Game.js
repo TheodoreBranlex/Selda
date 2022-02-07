@@ -5,18 +5,18 @@ Game = function (canvasId) {
     // Canvas et engine défini ici
     var canvas = document.getElementById(canvasId);
     var engine = new BABYLON.Engine(canvas, true);
-    var that = this;
+    var game = this;
 
     // On initie la scène avec une fonction associé à l'objet Game
     this.scene = this.initScene(engine);
 
     // Crée un joueur et une arène
-    var player = new Player(that, canvas);
-    var arena = new Arena(that);
+    var camera = new Camera(game.scene, canvas);
+    var stage = new Stage(game.scene);
 
     // Permet au jeu de tourner
     engine.runRenderLoop(function () {
-        that.scene.render();
+        game.scene.render();
     });
 
     // Ajuste la vue 3D si la fenetre est agrandi ou diminué
