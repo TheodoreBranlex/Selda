@@ -1,5 +1,5 @@
 ﻿// Page entièrement chargé, on lance le jeu
-document.addEventListener("DOMContentLoaded", function () { new Game('renderCanvas'); }, false);
+document.addEventListener("DOMContentLoaded", function () { new Game('Canvas'); }, false);
 
 Game = function (canvasId) {
     var canvas = document.getElementById(canvasId);
@@ -13,6 +13,7 @@ Game = function (canvasId) {
 
     engine.runRenderLoop(function () {
         scene.render();
+        stage.player.Move(engine.getDeltaTime() / 1000);
     });
 
     window.addEventListener("resize", function () {

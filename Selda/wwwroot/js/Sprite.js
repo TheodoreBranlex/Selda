@@ -1,5 +1,7 @@
-﻿Sprite = function (file, scene) {
-    var mesh = BABYLON.Mesh.CreateGround("Sprite", 1, 1, 2, scene);
-    mesh.material = new BABYLON.StandardMaterial("Sprite", scene);
-    mesh.material.diffuseTexture = new BABYLON.Texture(file, scene);
+﻿Sprite = function (file) {
+    var manager = new BABYLON.SpriteManager("Manager", file, 2000, { width: 512, height: 512 });
+    BABYLON.Sprite.call(this, "Sprite", manager);
 }
+
+Sprite.prototype = BABYLON.Sprite.prototype;
+Sprite.prototype.constructor = Sprite;

@@ -1,5 +1,7 @@
 ﻿Camera = function (scene, canvas) {
-    var camera = new BABYLON.FreeCamera("Camera", new BABYLON.Vector3(0, 5, 0), scene);
-    camera.setTarget(BABYLON.Vector3.Zero());
-    camera.attachControl(canvas, true);
+    BABYLON.FreeCamera.call(this, "Camera", new BABYLON.Vector3(0, 0, -5), scene);
+    this.setTarget(BABYLON.Vector3.Zero());
 };
+
+Camera.prototype = BABYLON.FreeCamera.prototype;
+Camera.prototype.constructor = Camera;
