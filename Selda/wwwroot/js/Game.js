@@ -1,5 +1,4 @@
-﻿// Page entièrement chargé, on lance le jeu
-document.addEventListener("DOMContentLoaded", function () { new Game('Canvas'); }, false);
+﻿document.addEventListener("DOMContentLoaded", function () { new Game('Canvas'); }, false);
 
 Game = function (canvasId) {
     var canvas = document.getElementById(canvasId);
