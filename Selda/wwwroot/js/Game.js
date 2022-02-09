@@ -7,12 +7,12 @@ Game = function (canvasId) {
     var scene = new BABYLON.Scene(engine);
     scene.clearColor = new BABYLON.Color3(0, 0, 0);
 
-    var camera = new Camera(scene, canvas);
     var stage = new Stage(scene);
 
     engine.runRenderLoop(function () {
+        var dt = engine.getDeltaTime() / 1000;
+        stage.Update(dt);
         scene.render();
-        stage.player.Move(engine.getDeltaTime() / 1000);
     });
 
     window.addEventListener("resize", function () {

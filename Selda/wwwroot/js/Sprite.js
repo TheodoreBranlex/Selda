@@ -1,7 +1,13 @@
-﻿Sprite = function (file) {
-    var manager = new BABYLON.SpriteManager("Manager", file, 2000, { width: 512, height: 512 });
-    BABYLON.Sprite.call(this, "Sprite", manager);
-}
+﻿Sprite = function (name, manager) {
+    BABYLON.Sprite.call(this, name, manager);
 
+    if (manager.cellWidth > manager.cellHeight)
+        this.width = manager.cellWidth / manager.cellHeight;
+    else
+        this.height = manager.cellHeight / manager.cellWidth;
+}
 Sprite.prototype = BABYLON.Sprite.prototype;
-Sprite.prototype.constructor = Sprite;
+
+Sprite.prototype.Collide = function (sprite) {
+    return false;
+}
