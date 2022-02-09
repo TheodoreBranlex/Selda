@@ -5,7 +5,10 @@
     var manager = new BABYLON.SpriteManager("Player", texture, 1, size, scene);
     Sprite.call(this, "Player", manager);
 
-    this.move = new BABYLON.Vector3(0, 0, 0);
+    this.idle = new Animation([0, 2], [20, 20], [10, 12], [30, 32]);
+    this.run = new Animation([40, 49], [60, 69], [50, 59], [70, 79]);
+
+    this.direction = new BABYLON.Vector3(0, -1, 0);
 }
 Player.prototype = Sprite.prototype;
 
@@ -14,26 +17,12 @@ Player.prototype.Update = function (dt) {
 
     this.position.addInPlace(move.multiplyByFloats(dt, dt, 0));
 
-    if (!move.equals(this.move)) {
-        if (move.y < 0)
-            this.playAnimation(40, 49, true, 100);
-        else if (move.x < 0)
-            this.playAnimation(50, 59, true, 100);
-        else if (move.y > 0)
-            this.playAnimation(60, 69, true, 100);
-        else if (move.x > 0)
-            this.playAnimation(70, 79, true, 100);
-        else {
-            if (this.move.y < 0)
-                this.playAnimation(0, 2, true, 100);
-            if (this.move.x < 0)
-                this.playAnimation(10, 12, true, 100);
-            if (this.move.y > 0)
-                this.playAnimation(20, 20, true, 100);
-            if (this.move.x > 0)
-                this.playAnimation(30, 32, true, 100);
-        }
+    if (!move.equals(this.direction)) {
+        if (move.equals(BABYLON.Vector3.Zero()))
+            this.idle.Play(this, this.direction, 300);
+        else
+            this.run.Play(this, move, 100);
     }
 
-    this.move = move;
+    this.direction = move;
 }
