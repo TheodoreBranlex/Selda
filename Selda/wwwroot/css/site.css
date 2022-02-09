@@ -1,38 +1,9 @@
-﻿body {
-    background-image: url("../img/Site/Background.png");
-    background-size: 30pt;
-    color: white;
-    font-family: 'ReggaeOne';
-    margin-bottom: 60px;
-}
-
-h1 {
-    font-family: 'Triforce';
-}
-
-a.navbar-brand {
-    white-space: normal;
-    text-align: center;
-    word-break: break-all;
-}
-
-a {
-    color: gold;
-}
-
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
-}
-
-button.accept-policy {
-    font-size: 1rem;
-    line-height: inherit;
-}
-
-.navbar {
+﻿.navbar {
     background-color: rgb(0, 0, 0, 0.4);
+}
+
+.navbar-nav {
+    justify-content: center !important;
 }
 
 .navbar:before {
@@ -44,6 +15,7 @@ button.accept-policy {
     position: absolute;
     top: 0;
 }
+
 .navbar:after {
     content: "";
     background: linear-gradient(to right, transparent 0%, #eec969 50%, transparent 100%);
@@ -54,8 +26,22 @@ button.accept-policy {
     bottom: 0;
 }
 
+body {
+    background-image: url("../img/Site/Background.png");
+    background-size: 30pt;
+    color: white;
+    font-family: 'ReggaeOne';
+}
+
+h1 {
+    font-family: 'Triforce';
+}
+
+a {
+    color: gold;
+}
+
 #Canvas {
     width: 100%;
     height: 100%;
-    touch-action: none;
 }
