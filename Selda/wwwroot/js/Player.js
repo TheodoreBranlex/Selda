@@ -11,6 +11,7 @@
     this.direction = new BABYLON.Vector3(0, -1, 0);
 }
 Player.prototype = Sprite.prototype;
+Player.prototype.constructor = Player;
 
 Player.prototype.Update = function (dt) {
     var move = new BABYLON.Vector3(input.KeyD - input.KeyA, input.KeyW - input.KeyS, 0);

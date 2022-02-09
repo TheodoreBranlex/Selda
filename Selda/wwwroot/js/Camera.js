@@ -3,3 +3,4 @@
     this.setTarget(BABYLON.Vector3.Zero());
 };
 Camera.prototype = BABYLON.FreeCamera.prototype;
+Camera.prototype.constructor = Camera;
