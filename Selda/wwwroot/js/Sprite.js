@@ -10,5 +10,8 @@ Sprite.prototype = BABYLON.Sprite.prototype;
 Sprite.prototype.constructor = Sprite;
 
 Sprite.prototype.Collide = function (sprite) {
-    return false;
+    return this.position.x < sprite.position.x + sprite.width
+    && sprite.position.x < this.position.x + this.width
+    && this.position.y < sprite.position.y + sprite.height
+    && sprite.position.y < this.position.y + this.height;
 }
