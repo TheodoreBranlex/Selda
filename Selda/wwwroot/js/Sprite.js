@@ -6,7 +6,7 @@
     else
         this.height = manager.cellHeight / manager.cellWidth;
 }
-Sprite.prototype = BABYLON.Sprite.prototype;
+Sprite.prototype = new BABYLON.Sprite();
 Sprite.prototype.constructor = Sprite;
 
 Sprite.prototype.Collide = function (sprite) {

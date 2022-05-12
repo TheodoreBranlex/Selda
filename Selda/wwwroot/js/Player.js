@@ -10,7 +10,7 @@
 
     this.direction = new BABYLON.Vector3(0, -1, 0);
 }
-Player.prototype = Sprite.prototype;
+Player.prototype = new Sprite();
 Player.prototype.constructor = Player;
 
 Player.prototype.Update = function (dt) {
